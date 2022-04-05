@@ -21,11 +21,14 @@ namespace Tree
         where T : IComparable
     {
         public TreeNode<T> root { get; set;}
-
+        public int Count {get;}
+        
         public BinarySearchTree()
         {
-            this.root = new TreeNode<T>();
+            root = null;
+            Count = 0;
         }
+
 
     }
 }
