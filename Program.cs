@@ -10,3 +10,5 @@ Console.WriteLine("----");
 Console.WriteLine(nodo.val);
 Console.WriteLine(nodo.left.val);
 Console.WriteLine(nodo.right.val);
+
+Console.WriteLine($"left>right? = {nodo.left.val >nodo.right.val}");

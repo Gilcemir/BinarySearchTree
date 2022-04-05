@@ -3,22 +3,21 @@
 namespace Tree
 {
     public class TreeNode<T>
-        where T : IComparable
+        where T : IComparable, IEquatable<T>
     {
         public T val { get; set;}
         public TreeNode<T> left { get; set;}
         public TreeNode<T> right { get; set;}
-
-        public TreeNode(T val = default(T), TreeNode<T> left = null, TreeNode<T> right = null)
+        public int Count {get; set;}
+        public TreeNode(T val = default(T))
         {
             this.val = val;
-            this.left = left;
-            this.right = right;
+            Count = 1;
         }
     }
 
     public class BinarySearchTree<T>
-        where T : IComparable
+        where T : IComparable, IEquatable<T>
     {
         public TreeNode<T> root { get; set;}
         public int Count {get;}
@@ -29,6 +28,29 @@ namespace Tree
             Count = 0;
         }
 
+        public BinarySearchTree(IList<T> list){
 
+        }
+
+        public BinarySearchTree(T[] list)
+        {
+            
+        }
+
+        public BinarySearchTree(T elem)
+        {
+            
+        }
+        public bool Search(T target){
+
+        }
+
+        public bool Insert(T elem){
+
+        }
+
+        public bool Delete(T elem){
+
+        }
     }
 }
