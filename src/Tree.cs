@@ -48,6 +48,17 @@ namespace Tree
         public int Length(){
             return Count;
         }
+
+        public int Height(){
+            return Depth(_root);
+        }
+
+        private int Depth(TreeNode<T> root){
+            if(root == null)
+                return 0;
+
+            return 1 + Math.Max(Depth(root.left), Depth(root.right));
+        }
         public bool Search(T target){
             TreeNode<T> node = Find(_root, target);
             if(node == null){
@@ -101,17 +112,18 @@ namespace Tree
             }
             q.Enqueue(_root);
             while(q.Count > 0){
+                
                 int size = q.Count;
                 for(int i = 0; i < size; i++){
+                    
                     TreeNode<T> cur = q.Dequeue();
                     Console.Write($"{cur.val}({cur.Count}) ");
 
-                    if(cur.left != null){
+                    if(cur.left != null)
                         q.Enqueue(cur.left);
-                    }
-                    if(cur.right != null){
+                    
+                    if(cur.right != null)
                         q.Enqueue(cur.right);
-                    }
                 }
                 Console.WriteLine();
             }

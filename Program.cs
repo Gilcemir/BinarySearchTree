@@ -2,6 +2,8 @@
 using System;
 
 BinarySearchTree<int> BST = new BinarySearchTree<int>();
+BST.Print();
+
 BST.Insert(5);
 Console.WriteLine(BST._root.val);
 
@@ -26,3 +28,4 @@ BST.Search(11);
 
 
 Console.WriteLine($"Length of the Tree = {BST.Length()}");
+Console.WriteLine($"Height of the Tree = {BST.Height()}");
