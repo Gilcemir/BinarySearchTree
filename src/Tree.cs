@@ -22,7 +22,7 @@ namespace Tree
     public class BinarySearchTree<T>
         where T : IComparable, IEquatable<T>
     {
-        public TreeNode<T> _root { get; set;}
+        private TreeNode<T> _root { get; set;}
         private int Count {get; set;}
         
         public BinarySearchTree()

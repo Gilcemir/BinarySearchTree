@@ -5,7 +5,6 @@ BinarySearchTree<int> BST = new BinarySearchTree<int>();
 BST.Print();
 
 BST.Insert(5);
-Console.WriteLine(BST._root.val);
 
 BST.Insert(4);
 BST.Insert(3);
