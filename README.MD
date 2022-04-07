@@ -38,10 +38,9 @@
 #### Parameters
     This Method takes no argument.
 #### Returns
-
 **int**
 
-> Number of nodes in the BST
+    Number of nodes in the BST
 _______________
 ### Height()
     This method return the Height of the BST.
@@ -49,38 +48,45 @@ _______________
 #### Parameters
     This Method takes no argument.
 #### Returns
-- **int**
-> Return the height of the BST
+**int**
+
+    Return the height of the BST
 _______________
 ### Search(T)
     Check if element T is present in the BST.
 
 #### Parameters
-- **T**
-> Element **T** to be searched.
+**T**
+    
+    Element **T** to be searched.
 #### Returns
-- **bool**
-> Return if either the element T is present in the BST or not.
+**bool**
+    
+    Return if either the element T is present in the BST or not.
 _______________
 ### Insert(T)
     This method insert element T in the BST.
 
 #### Parameters
-- **T**
-> Element **T** to be inserted.
+**T**
+
+    Element **T** to be inserted.
 #### Returns
-- **bool**
-> Return true if element is inserted in the BST.
+**bool**
+
+    Return true if element is inserted in the BST.
 _______________
 ### Delete(T)
-> This method deletes an instance of T in the BST.
-
+This method deletes an instance of T in the BST.
 #### Parameters
-- **T**
-> Element **T** to be inserted.
+**T**
+
+    Element **T** to be inserted.
+
 #### Returns
-- **bool**
-> Return true if element is deleted in the BST.
+**bool**
+
+    Return true if element is deleted in the BST.
 _______________
 ### Print()
     This method prints in the Console the BST by level.
