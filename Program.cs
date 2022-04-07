@@ -20,4 +20,9 @@ BST.Insert(7);
 
 BST.Print();
 
+BST.Search(15);
+BST.Search(4);
+BST.Search(11);
+
+
 Console.WriteLine($"Length of the Tree = {BST.Length()}");

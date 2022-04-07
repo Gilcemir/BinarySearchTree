@@ -49,9 +49,26 @@ namespace Tree
             return Count;
         }
         public bool Search(T target){
+            TreeNode<T> node = Find(_root, target);
+            if(node == null){
+                Console.WriteLine("Element is not present in the BST");
+                return false;
+            }
+            Console.WriteLine($"Element {node.val} has {node.Count} occurrenc{(node.Count == 1? "y":"es")} in the BST");
             return true;
         }
 
+        private TreeNode<T> Find(TreeNode<T> root, T target){
+            if(root == null)
+                return null;
+            if(root.val.CompareTo(target) == 1){ // root.val > elem
+                return Find(root.left, target);
+            }else if(root.val.CompareTo(target) == -1){ //root.val < elem
+                return Find(root.right, target);
+            }else{// root.val == elem
+                return root;
+            }
+        }
         public bool Insert(T elem){
             _root = Add(_root, elem);
             Count++;
