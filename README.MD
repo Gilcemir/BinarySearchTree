@@ -38,7 +38,9 @@
 #### Parameters
     This Method takes no argument.
 #### Returns
-- **int**
+
+**int**
+
 > Number of nodes in the BST
 _______________
 ### Height()
@@ -71,7 +73,7 @@ _______________
 > Return true if element is inserted in the BST.
 _______________
 ### Delete(T)
-    This method deletes an instance of T in the BST.
+> This method deletes an instance of T in the BST.
 
 #### Parameters
 - **T**
