@@ -31,19 +31,26 @@ namespace Tree
             Count = 0;
         }
 
-        public BinarySearchTree(IList<T> list){
-
+        public BinarySearchTree(IList<T> list)
+        {
+            Count = 0;
+            foreach(T item in list){
+                Insert(item);
+            }
         }
 
         public BinarySearchTree(T[] list)
         {
-            
+            Count = 0;
+            foreach(T item in list){
+                Insert(item);
+            }
         }
 
         public BinarySearchTree(T elem)
         {
-            _root = new TreeNode<T>(elem);
-            Count = 1;
+            Count = 0;
+            Insert(elem);
         }
         public int Length(){
             return Count;
