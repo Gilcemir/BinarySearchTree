@@ -1,14 +1,23 @@
 ﻿using Tree;
 using System;
 
-TreeNode<int> nodo = new TreeNode<int>();
+BinarySearchTree<int> BST = new BinarySearchTree<int>();
+BST.Insert(5);
+Console.WriteLine(BST._root.val);
 
-nodo.right = new TreeNode<int>(1);
-nodo.left = new TreeNode<int>(2);
+BST.Insert(4);
+BST.Insert(3);
+BST.Insert(8);
+BST.Insert(10);
+BST.Insert(15);
+BST.Insert(5);
+BST.Insert(15);
+BST.Insert(15);
+BST.Insert(8);
+BST.Insert(2);
+BST.Insert(16);
+BST.Insert(7);
 
-Console.WriteLine("----");
-Console.WriteLine(nodo.val);
-Console.WriteLine(nodo.left.val);
-Console.WriteLine(nodo.right.val);
+BST.Print();
 
-Console.WriteLine($"left>right? = {nodo.left.val >nodo.right.val}");
+Console.WriteLine($"Length of the Tree = {BST.Length()}");
