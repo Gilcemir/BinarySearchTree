@@ -107,8 +107,63 @@ namespace Tree
         }
 
         public bool Delete(T elem){
-            return true;
+            int prevCount = Count;
+            _root = DeleteNode(_root, elem);
+            return Count != prevCount;
         }
+
+        private TreeNode<T> DeleteNode(TreeNode<T> root, T elem){
+            if(root == null)
+                return null;
+            
+            if(root.val.CompareTo(elem) == 1) //root.val > elem
+            {
+                root.left = DeleteNode(root.left, elem);
+            }else if(root.val.CompareTo(elem) == -1) //root.val < elem
+            {
+                root.right =  DeleteNode(root.right, elem);
+            }else
+            {
+                if(root.Count > 1){
+                    root.Count--;
+                    Count--;
+                }else{
+                    if(root.right == null && root.left == null) //if its a leaf
+                    {
+                        root = null;
+                        Count--;
+                    }else if(root.right == null)
+                    {
+                        root = root.left;
+                        Count--;
+                    }
+                    else if(root.left == null)
+                    {
+                        root = root.right;
+                        Count--;
+                    }else{
+                        TreeNode<T> temp = FindMin(root.right); //find min in the right subtree(with higher values)
+                        root.val = temp.val; //swap values
+                        root.Count = temp.Count;//swap values
+                        temp = Find(root.right, root.val); //find the root which was swapped
+                        temp.Count = 1;//set count to 1, so this TreeNode will be deleted (not decreased in case there's more than one occurrency)
+                        root.right = DeleteNode(root.right, root.val); //delete the node that was swapped.
+
+                        //notice that here we dont decrease Count, since we have a recursive call in the last line in this block
+                        // so this call will decrease its counting.
+                    } 
+                }
+            }
+            return root;
+        }
+
+        private TreeNode<T> FindMin(TreeNode<T> root){
+            if(root.left == null){
+                return root;
+            }
+            return FindMin(root.left);
+        }
+
 
         public void Print(){
             Queue<TreeNode<T>> q = new Queue<TreeNode<T>>();
