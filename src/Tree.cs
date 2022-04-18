@@ -164,6 +164,28 @@ namespace Tree
             return FindMin(root.left);
         }
 
+        public List<T> ToList(){
+            List<TreeNode<T>> treeNodeList = new List<TreeNode<T>>();
+            List<T> list = new List<T>();
+            
+            InorderTraversal(_root, treeNodeList);
+
+            foreach(TreeNode<T> node in treeNodeList){
+                for(int i = 0; i < node.Count; i++)
+                    list.Add(node.val);
+            }
+            return list;
+        }
+
+        private void InorderTraversal(TreeNode<T> root, List<TreeNode<T>> list){
+            if(root == null)
+                return;
+            
+            InorderTraversal(root.left, list);
+            list.Add(root);
+            InorderTraversal(root.right, list);
+        }
+
 
         public void Print(){
             Queue<TreeNode<T>> q = new Queue<TreeNode<T>>();
